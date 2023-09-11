@@ -1,0 +1,82 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "tenantName": {
+      "type": "string"
+    },
+    "deploymentid": {
+      "type": "string"
+           },
+    "azureUsername": {
+      "type": "string"
+    },
+    "azurePassword": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "username1": "[concat('odl_user_', parameters('deploymentid'), '_01', '@', parameters('tenantName') )]",
+    "user1Password": "[concat(parameters('azurePassword'), '1')]",
+    "username2": "[concat('odl_user_', parameters('deploymentid'), '_02', '@', parameters('tenantName') )]",
+    "user2Password": "[concat(parameters('azurePassword'), '2')]",
+    "username3": "[concat('odl_user_', parameters('deploymentid'), '_03', '@', parameters('tenantName') )]",
+    "user3Password": "[concat(parameters('azurePassword'), '3')]",
+    "username4": "[concat('odl_user_', parameters('deploymentid'), '_04', '@', parameters('tenantName') )]",
+    "user4Password": "[concat(parameters('azurePassword'), '4')]",
+    "username5": "[concat('odl_user_', parameters('deploymentid'), '_05', '@', parameters('tenantName') )]",
+    "user5Password": "[concat(parameters('azurePassword'), '5')]"
+
+  },
+  "resources": [ ],
+  "outputs": {
+    "azureUsername": {
+      "type": "string",
+      "value": "[parameters('azureUsername')]"
+    },
+    "azurePassword": {
+      "type": "string",
+      "value": "[parameters('azurePassword')]"
+    },
+    "User 01 UPN": {
+      "type": "string",
+      "value": "[variables('username1')]"
+    },
+    "User 01 Password": {
+      "type": "string",
+      "value": "[variables('user1Password')]"
+    },
+    "User 02 UPN": {
+      "type": "string",
+      "value": "[variables('username2')]"
+    },
+    "User 02 Password": {
+      "type": "string",
+      "value": "[variables('user2Password')]"
+    },
+    "User 03 UPN": {
+      "type": "string",
+      "value": "[variables('username3')]"
+    },
+    "User 03 Password": {
+      "type": "string",
+      "value": "[variables('user3Password')]"
+    },
+    "User 04 UPN": {
+      "type": "string",
+      "value": "[variables('username4')]"
+    },
+    "User 04 Password": {
+      "type": "string",
+      "value": "[variables('user4Password')]"
+    },
+    "User 05 UPN": {
+      "type": "string",
+      "value": "[variables('username5')]"
+    },
+    "User 05 Password": {
+      "type": "string",
+      "value": "[variables('user5Password')]"
+    }
+  }
+  }
